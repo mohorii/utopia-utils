@@ -1,0 +1,25 @@
+# System files
+# ------------
+
+Icon
+.DS_Store
+.idea/
+
+# Lock files
+# ---------------
+.lock
+
+# Editors
+# (sensitive workspace files)
+# ---------------------------
+*.sublime-workspace
+/.vscode
+/.idea
+
+# Individual excludes
+# ---------------
+/dist/*
+!/dist/.gitkeep
+node_modules/
+vendor/
+.sass-cache

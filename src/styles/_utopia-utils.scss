@@ -1,0 +1,42 @@
+@use 'sass:list';
+@use 'utopia-core-scss/src/utopia' as utopia;
+@use 'utopia-core-scss/src/helpers' as utopiaHelper;
+
+@function calculateClamps($config) {
+  $pairs: ();
+
+  @each $item in map-get($config, "pairs") {
+    $min: nth($item, 1);
+    $max: nth($item, 2);
+    $identifier: if(list.length($item) > 2, nth($item, 3), '#{$min}-#{$max}');
+    $pairs: append($pairs, (
+      "label": "#{$min}-#{$max}",
+      "identifier": "#{$identifier}",
+      "clamp": utopia.calculateClamp((
+        "minWidth": map-get($config, "minWidth"),
+        "maxWidth": map-get($config, "maxWidth"),
+        "minSize": $min,
+        "maxSize": $max,
+        "usePx": map-get($config, "usePx"),
+        "relativeTo": map-get($config, "relativeTo")
+      ))
+    ));
+  }
+
+  @return $pairs;
+}
+
+@mixin generateClamps($config) {
+  $prefix: utopiaHelper.getDefault($config, "prefix", "space-");
+  $clamps: calculateClamps($config);
+  @each $size in $clamps {
+    --#{$prefix}#{map-get($size, "identifier")}: #{map-get($size, "clamp")};
+  }
+}
+
+@mixin generateClamp($config) {
+  $name: utopiaHelper.getDefault($config, "name", "space-");
+  $min: map-get($config, "minSize");
+  $max: map-get($config, "maxSize");
+  --#{$name}#{map-get($config, "identifier")}: #{utopia.calculateClamp($config)};
+}

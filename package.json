@@ -1,0 +1,20 @@
+{
+  "name": "kirby-vite-basic-kit",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "vite": "vite",
+    "build": "vite build"
+  },
+  "author": "Moritz Preuß",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "glob": "^10.3.3",
+    "sass": "^1.83.4",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "utopia-core-scss": "^1.2.1"
+  }
+}

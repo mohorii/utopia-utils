@@ -1,0 +1,31 @@
+@import 'styles/utopia-utils';
+
+:root {
+  // generateClamps just does what it says.
+  // These Clamps are accessible via css variable in the :root of the project.
+
+  @include generateClamps((
+    "minWidth": 390,
+    "maxWidth": 1920,
+    "pairs": (
+        (44, 104, 'display-1'), //var(--fluid-display-1)
+        (42, 88, 'display-2'), //var(--fluid-display-2)
+        (40, 80, 'display-3'), //var(--fluid-display-3)
+        (38, 72, 'display-4'), //var(--fluid-display-4)
+        (36, 64, 'display-5'), //var(--fluid-display-5)
+        (34, 56, 'display-6'), //var(--fluid-display-6)
+    ),
+    "prefix": "fluid-",
+  ));
+
+  // generateClamps does nearly the same
+  // These Clamps are accessible via css variable in the :root of the project.
+
+  @include generateClamp((
+    "minWidth": 320,
+    "maxWidth": 1240,
+    "minSize": 16,
+    "maxSize": 20,
+    "name": "space-taxi",
+  ));
+}
