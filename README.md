@@ -34,8 +34,7 @@ Ships just little specifications to give each clamp in a map a name.
     "prefix": "fluid-",
   ));
 
-  // generateClamps does nearly the same
-  // These Clamps are accessible via css variable in the :root of the project.
+  // generateClamp creates one single clamp-variable
   // Outputs var(--space-taxi) variable in :root of the project.
 
   @include generateClamp((

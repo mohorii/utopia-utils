@@ -1,10 +1,10 @@
-@import 'styles/utopia-utils';
+@use 'styles/utopia-utils' as utopiaUtils;
 
 :root {
   // generateClamps just does what it says.
   // These Clamps are accessible via css variable in the :root of the project.
 
-  @include generateClamps((
+  @include utopiaUtils.generateClamps((
     "minWidth": 390,
     "maxWidth": 1920,
     "pairs": (
@@ -18,10 +18,10 @@
     "prefix": "fluid-",
   ));
 
-  // generateClamps does nearly the same
-  // These Clamps are accessible via css variable in the :root of the project.
+  // generateClamp creates one single clamp-variable
+  // Outputs var(--space-taxi) variable in :root of the project.
 
-  @include generateClamp((
+  @include utopiaUtils.generateClamp((
     "minWidth": 320,
     "maxWidth": 1240,
     "minSize": 16,
