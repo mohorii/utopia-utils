@@ -1,16 +1,18 @@
-<h1>Utopia Utils</h1>
-<small><strong>by Moritz</strong></small>
-<p>Just a little scss helper for dynamic sizes and spacings.</p>
-<p>Built on the beautiful plugin <a href="https://github.com/trys/utopia-core-scss.git" target="_blank">utopia-core-scss</a> wich is the Calculation behind <a href="https://utopia.fyi" target="_blank">Utopia.fyi</a></p>
-<p>Ships just little specifications to give each clamp in a map a name.</p>
+# Utopia Utils
 
-<h3>You can install dependencies via</h3>
+by Moritz
+Just a little scss helper for dynamic sizes and spacings.
+Built on the beautiful plugin [utopia-core-scss](https://github.com/trys/utopia-core-scss.git) wich is the Calculation behind [Utopia.fyi](https://utopia.fyi)
+
+Ships just little specifications to give each clamp in a map a name.
+
+### You can install dependencies via
 `npm install`
 
-<h3>and get yourself a css output via</h3>
+### and get yourself a css output via
 `npm run build`
 
-<h2>This helper ships two methods you can use to get some cool dynamic clamps in css variables.</h2>
+### This helper ships two methods you can use to get some cool dynamic clamps in css variables.
 ```scss
 @import 'styles/utopia-utils';
 
